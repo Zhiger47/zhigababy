@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="kaz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ФК Барселона</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            opacity: 0;
+            transform: scale(0.8);
+            animation: fadeIn 1.5s ease-out forwards, scaleUp 1.5s ease-out forwards;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes scaleUp {
+            to {
+                transform: scale(1.8);
+            }
+        }
+
+        .loader {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: space-around;
+            width: 80px;
+        }
+
+        .loader div {
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: bounce 1.5s infinite ease-in-out;
+        }
+
+        .loader div:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .loader div:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+            }
+            40% {
+                transform: scale(1);
+            }
+        }
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(90deg, #0033a0, #a50044);
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    color: #F0E68C;
+    font-size: 3em;
+    margin: 0;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #a50044;
+            border-bottom: 2px solid #a50044;
+            padding-bottom: 10px;
+        }
+        figure {
+            text-align: center;
+            margin: 20px auto;
+        }
+        figure img {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+    .cards-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        margin: 10px 30px;
+    }
+
+    .card {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center;
+        flex: 1 1 23%;
+        max-width: 23%;
+    }
+
+    .card img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .card h3 {
+        margin: 15px 0;
+        color: #0033a0;
+    }
+
+    .card p {
+        padding: 0 15px;
+    }
+
+    .card button a {
+        text-decoration: none;
+        color: white;
+        background: #0033a0;
+        padding: 10px 20px;
+        border-radius: 5px;
+        display: inline-block;
+    }
+
+    .card button a:hover {
+        background: #a50044;
+    }
+
+    @media (max-width: 1200px) {
+        .card {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+    }   
+
+    @media (max-width: 768px) {
+    .card {
+        flex: 1 1 100%; 
+        max-width: 100%;
+    }
+    }
+
+
+        footer {
+            background-color: #333;
+            color: #000000;
+            padding: 20px 10px;
+            text-align: center;
+        }
+        footer a {
+            color: #25189a;
+            text-decoration: none;
+        }
+        footer pre {
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            color: #000000;
+        }
+        .img4{
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 10px;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <h1>ФК Барселона</h1>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="https://www.fcbarcelona.com/">Официальный сайт</a></li>
+                <li><a href="#aboutclub">О клубе</a></li>
+                <li><a href="#achievements">Достижения</a></li>
+                <li><a href="matchybarsy.html">Матчи</a></li>
+                <li><a href="#players">Игроки</a></li>
+                <li><a href="magaz.html">Магазин</a></li>
+                <li><a href="#stadium">Стадион</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script src="script.js"></script>
+
+
+    
+    <div class="container">
+        <h1>Добро пожаловать!</h1>
+    </div>
+
+    <script>
+        window.addEventListener('load', () => {
+            const loader = document.querySelector('.loader');
+            loader.style.display = 'none';
+        });
+
+        let toggle = document.getElementById('menu-toggle');
+        let navbar = document.getElementById('navbar');
+
+        toggle.addEventListener('click', () => {
+            if (navbar.style.display === 'block') {
+                navbar.style.display = 'none';
+            } else {
+                navbar.style.display = 'block';
+            }
+});
+
+    </script>
+
+
+
+
+
+    <figure>
+        <div style="background-color: #F0E68C; border-radius: 20px; padding: 15px; margin-left: 350px; margin-right: 350px;">
+            <p align="center"><img class="logo" src="fc-barcelona-barca-logo-soccer-football-emblem.jpg" width="640px"></p>
+            <figcaption align="center">Логотип ФК Барселона</figcaption>
+        </div>
+    </figure>
+    <hr>
+    <section id="aboutclub">
+        <h2>О клубе</h2>
+        <p>ФК «Барселона» — один из самых известных и титулованных футбольных клубов мира, основанный 29 ноября 1899 года Жоаном Гампером и группой швейцарских, английских и каталонских игроков. Клуб выступает в испанской Ла Лиге, а его домашний стадион — Камп Ноу, который является крупнейшим футбольным стадионом в Европе.</p>
+            <ul>
+                <li><strong>Прозвище и символы:</strong> Клуб известен под прозвищем «Барса». Символ клуба — сине-гранатовые цвета (blaugrana) и герб с изображением креста Святого Георгия и флага Каталонии.</li>
+            
+                <li><strong>Философия игры:</strong> «Барселона» известна своим стилем игры «тики-така», который основан на коротких передачах и контроле мяча. Этот стиль особенно развился при тренерах Йохане Кройфе и Пепе Гвардиоле.</li>
+            
+                <li><strong>Главные достижения:</strong>
+                    <ul>
+                        <li>Ла Лига: «Барселона» выигрывала чемпионат Испании более 25 раз.</li>
+                        <li>Лига чемпионов УЕФА: клуб побеждал в этом турнире 5 раз.</li>
+                        <li>Кубок Испании: обладатель более 30 трофеев.</li>
+                    </ul>
+                </li>
+            
+                <li><strong>Звезды клуба:</strong> «Барселона» воспитала и привлекала многих легенд футбола, таких как Лионель Месси, Йохан Кройф, Роналдиньо, Андрес Иньеста, Хави Эрнандес и другие.</li>
+            
+                <li><strong>Социальное значение:</strong> Клуб является важной частью каталонской идентичности и активно поддерживает независимость Каталонии. Его девиз: «Més que un club» («Больше, чем клуб»).</li>
+            
+                <li><strong>Соперничество:</strong> Одно из самых ярких противостояний в футболе — это Эль Класико, матчи против мадридского «Реала». Это дерби имеет не только спортивный, но и политический подтекст.</li>
+            </ul>
+            <div align="right"><a href="history.html"><i>История Барселоны</i></a></div>
+    </section>
+    <figure style="margin: 20px auto; max-width: 600px; border: 2px solid #004d98; border-radius: 10px; background-color: #f7f7f7; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <div style="padding: 15px; text-align: center;">
+            <h3 style="font-size: 18px; color: #004d98; font-family: Arial, sans-serif; margin-bottom: 10px;">
+                Короткое видео о ФК Барселона
+            </h3>
+            <div>
+                <video controls src="barca.mp4" width="100%" style="border-radius: 5px;"></video>
+            </div>
+        </div>
+    </figure>
+    
+    
+    
+    </section>
+
+    <section id="achievements">
+        <h2>Главные достижения</h2>
+        <ul class="b">
+            <li>27 титулов Ла Лиги</li>
+            <li>5 побед в Лиге чемпионов УЕФА</li>
+            <li>31 Кубок Испании</li>
+            <li>3 победы в Клубном чемпионате мира ФИФА</li>
+            <li>5 Суперкубков УЕФА</li>
+        </ul>
+    <figure>
+        <p><img src="volga (1).jpg" style="border: 5px solid; border-radius: 10px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);transition: transform 0.3s ease;"></p>
+    </figure>
+    </section>
+
+    <section id="players">
+        <details>
+            <summary>Основные Игроки</summary>
+            <ul>
+                <li>&copy; Марк-Андре тер Штеген</li>
+                <li>Дани Ольмо</li>
+                <li>Роберт Левандовски</li>
+                <li>Педри Гонсалез</li>
+                <li>Френки де Йонг</li>
+                <li>Жюль Кунде</li>
+                <li>Рональд Араухо</li>
+                <li>Пау Кубарси</li>
+                <li>Ламин Ямаль</li>
+                <li>Рафинья</li>
+                <li>Алехандро Бальде</li>
+            </ul>
+            <figure>
+                <p align="center"><img src="hq720.jpg" style="border: 5px solid; border-radius: 10px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);transition: transform 0.3s ease;"></p>
+            </figure>
+        </details>
+        <br>
+            
+        <h2>Капитаны ФК Барселона</h2>
+            <div style="background-color: #F0E68C; display: flex;justify-content: space-between; border-radius: 35px;
+                padding: 50px;
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: 20px; margin: 10px 30px 10px 30px;">
+                <div class="card">
+                    <img src="https://www.idman.biz/media/2024/05/14/1920x1280/f2a7e5b4-f30f-4a6a-b04a-70ddbaa309de.jpg?v=1715662902" alt="Марк-Андре Тер Штеген" width="600" height="400">
+                    <h3>Марк-Андре Тер Штеген</h3>
+                    <p>Марк-Андре́ тер Сте́ген родился 30 апреля 1992, Мёнхенгладбах — немецкий футболист, вратарь и капитан испанского клуба «Барселона» и сборной Германии.</p>
+                    <button><a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80_%D0%A1%D1%82%D0%B5%D0%B3%D0%B5%D0%BD,_%D0%9C%D0%B0%D1%80%D0%BA-%D0%90%D0%BD%D0%B4%D1%80%D0%B5">Толығырақ</a></button>
+                </div>
+                <div class="card"><img src="https://img.championat.com/c/900x900/news/big/w/k/myu-hochet-podpisat-de-jonga-v-2023-m-frenki-teper-gotov-ujti-iz-barselony_16657748432131890510.jpg" alt="Френки Де Йонг" width="600" height="400">
+                    <h3>Френки Де Йонг</h3>
+                    <p>Фре́нки де Йонг — нидерландский футболист, полузащитник «Барселоны» и сборной Нидерландов.</p>
+                    <button><a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5_%D0%99%D0%BE%D0%BD%D0%B3,_%D0%A4%D1%80%D0%B5%D0%BD%D0%BA%D0%B8">Толығырақ</a></button></div>
+                <div class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTy8G8t_eNkhsOkNSGlY7JEvQ1yumdTOAVbA&s" alt="Рональд Араухо" width="600" height="400">
+                    <h3>Рональд Араухо</h3>
+                    <p>Ро́нальд Федери́ко Арау́хо да Си́льва — уругвайский футболист, защитник испанского клуба «Барселона» и сборной Уругвая. Участник чемпионата мира 2022 года.</p>
+                    <button><a href="https://ru.wikipedia.org/wiki/%D0%90%D1%80%D0%B0%D1%83%D1%85%D0%BE,_%D0%A0%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%B4">Толығырақ</a></button></div>
+                <div class="card"><img src="https://static.euro-football.ru/images/gallery/50c9c6f72445e8265598ed934c8621bb4c00db77.jpg" alt="Рафинья" width="600" height="400">
+                    <h3>Рафинья</h3>
+                    <p>Рафаэл Диас Беллоли более известный, как Рафи́нья (порт.-браз. Raphinha; родился 14 декабря 1996 года, Порту-Алегри, Бразилия) — бразильский футболист, вингер испанского клуба «Барселона» и сборной Бразилии.</p>
+                    <button><a href="https://ru.wikipedia.org/wiki/%D0%A0%D0%B0%D1%84%D0%B8%D0%BD%D1%8C%D1%8F_(%D1%84%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%B8%D1%81%D1%82,_1996)">Толығырақ</a></button></div>
+            </div>
+        </section>
+    </section>
+    <section id="stadium">
+        <h2>Стадион</h2>
+            <p>«Камп Но́у»[2] (кат. Camp Nou, МФА [ˈkam ˈnɔw][3], в переводе «Новое поле») — стадион футбольного клуба «Барселона». С момента своего открытия в 1957 году стадион принадлежал испанскому футбольному клубу и вначале был назван Estadi del FC Barcelona (Стадион ФК «Барселона»), тем не менее уже тогда его называли «Камп Ноу». Официально своё нынешнее название он получил в 2000 году[4] после игры против футбольного клуба «Реал Мадрид». Вместимость «Камп Ноу» составляет 99 457 зрителя[1]; это самый большой по вместимости стадион не только в Испании, но и во всей Европе. Стадион является 12-м по вместимости зрителей стадионом мира и вторым в списке стадионов, предназначенных только для футбола, уступая по этому показателю только мексиканскому стадиону «Ацтека».</p>
+            <h3>Краткая история</h3>
+                <p>Стадион был построен, когда президентское кресло «Барселоны» занимал Франсеск Миро-Санс. Он продвинул проект будущего «Камп Ноу» из-за малой вместимости старого стадиона Camp de Les Corts, а также из-за того, что главный конкурент — «Реал Мадрид» построил Estadio Chamartín (ныне известный как «Сантьяго Бернабеу»). Проект нового стадиона «Барселоны» был поручен архитектору Франсеску Митжансу (двоюродному брату Миро-Санса).<br>
+                    Первый камень был заложен в марте 1953 года, а первоначальный бюджет составил 67 миллионов песет. Однако во время работы из-за непредвиденных изменений в почве возникли трудности, что увеличило срок постройки и затраты на стадион, которые достигли 288 миллионов. Клуб рассчитывал покрыть расходы на строительство за счёт продажи участка стадиона Les Corts, но муниципалитет Барселоны на десять лет задержался с переводом земли в другую категорию, что привело к временному дефициту средств. Франсиско Франко простил клубу долг.</p>
+                <p align="center"><img src="unnamed.jpg" class="img4" style="border: 5px solid; border-radius: 10px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);transition: transform 0.3s ease;"></p>
+    </section>
+    <footer>
+        <section id="contacts">
+            <h2><i>Контакты</i></h2>
+                <nav>
+                    <p align="center"><strong>Адрес: Барселона, Испания</strong></p>
+                    <p align="center"><strong>E-mail: info@fcbarcelona.com<strong></strong></p>
+                    <p align="center"><strong>instagram: <a href="https://www.instagram.com/fcbarcelona/">fcbarcelona</a><strong></strong></p>
+                </nav>
+        </section>
+        <pre>Интернет-сайт для поклонников ФК «Барселона».
+            Использование материалов сайта разрешено только с предварительного согласия правообладателей.
+            Все права на изображения и тексты принадлежат их авторам.
+            Сайт может содержать контент, не предназначенный для лиц младше 16 лет.
+        </pre>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
