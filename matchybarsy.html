@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Matchy Barsy</title>
+        <style>
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }header {
+    background-color: #ff6f61;
+    padding: 15px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 30px;
+    background-color: #e0e0e0;
+    margin: 20px 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    white-space: nowrap;
+}
+
+.progress-1 {
+    width: 100%;
+    background-color: #ff6f61;
+    animation: progress-animation-1 5s linear infinite;
+}
+
+.progress-2 {
+    width: 100%;
+    background-color: #61a0ff;
+    animation: progress-animation-2 3s linear infinite;
+}
+
+@keyframes progress-animation-1 {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes progress-animation-2 {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+
+            
+
+            @keyframes progress-animation-1 {
+                0% {
+                    transform: translateX(-100%); 
+                }
+                50% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translate(100%); 
+                }
+            }
+
+            @keyframes progress-animation-2 {
+                0% {
+                    transform: translateX(-100%);
+                }
+                50% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+
+            
+
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+            }
+            header {
+                background-color: #a50044;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                font-size: 24px;
+            }
+            header img {
+                height: 50px;
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+            footer {
+                background-color: #004d98;
+                color: white;
+                text-align: center;
+                padding: 10px;
+                margin-top: 20px;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 20px;
+            }
+            td, th {
+                border: 1px solid black;
+                padding: 10px;
+                text-align: center;
+            }
+            th {
+                background-color: #d3d3d3;
+            }
+            tr:nth-child(even) {
+                background-color: yellow;
+            }
+            tr:nth-child(odd) {
+                background-color: lightcoral;
+            }
+            h1, h2 {
+                text-align: center;
+                margin-top: 20px;
+            }
+            ul {
+                margin: 20px;
+                padding: 0 20px;
+            }
+            ul li {
+                margin-bottom: 10px;
+            }
+            ul li em {
+                font-weight: bold;
+                color: #a50044;
+            }
+            ul li u {
+                text-decoration: underline;
+            }
+            footer a {
+                display: block;
+                text-align: center;
+                margin: 20px 0;
+                text-decoration: none;
+                color: #004d98;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            Matchy Barsy - Матчи ФК Барселона
+        </header>
+        <div class="progress-bar">
+            <div class="progress progress-2">Visca el Barca</div>
+        </div>
+        
+        <h1>Расписание интересных матчей ФК Барселона</h1>
+        <section id="matches">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Соперник</th>
+                        <th>Турнир</th>
+                        <th>Место проведения</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>24.10.2024</td>
+                        <td>Бавария</td>
+                        <td>Лига чемпионов</td>
+                        <td>Камп Ноу</td>
+                    </tr>
+                    <tr>
+                        <td>27.10.2024</td>
+                        <td>Реал Мадрид</td>
+                        <td>Ла Лига</td>
+                        <td>Сантьяго Бернабеу</td>
+                    </tr>
+                    <tr>
+                        <td>07.11.2024</td>
+                        <td>Црвена Звезда</td>
+                        <td>Лига чемпионов</td>
+                        <td>Райко Митича</td>
+                    </tr>
+                    <tr>
+                        <td>10.11.2024</td>
+                        <td>Реал Сосьедад</td>
+                        <td>Ла Лига</td>
+                        <td>Аноэта</td>
+                    </tr>
+                    <tr>
+                        <td>12.12.2024</td>
+                        <td>Боруссия Дортмунд</td>
+                        <td>Лига чемпионов</td>
+                        <td>Сигнал Идуна Парк</td>
+                    </tr>
+                    <tr>
+                        <td>22.12.2024</td>
+                        <td>Атлетико Мадрид</td>
+                        <td>Ла Лига</td>
+                        <td>Камп Ноу</td>
+                    </tr>
+                    <tr>
+                        <td>08.01.2025</td>
+                        <td>Атлетик Бильбао</td>
+                        <td>Кубок Испании</td>
+                        <td>Сан Мамес</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <h2>Интересные факты о соперниках</h2>
+        <ul>
+            <li>Новый главный тренер <em>Баварии</em> <a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8,_%D0%92%D0%B5%D0%BD%D1%81%D0%B0%D0%BD">Винсент Компани</a> начал сезон в хорошей форме.</li>
+            <li>В предыдущем туре <em>«Реал»</em> потерял очки против <u>аутсайдеров</u> Ла Лиги.</li>
+            <li><em>«Црвена Звезда»</em> не проигрывает дома в <u>11 матчах</u> подряд в сербской Суперлиге. Сможет ли Барса их остановить?</li>
+            <li><em>Реал Сосьедад</em> не пропускает ни одного гола в последних <u>5 матчах</u>.</li>
+            <li>Главный тренер <em>Боруссии</em> <a href="https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D0%B7%D0%B8%D1%87,_%D0%AD%D0%B4%D0%B8%D0%BD">Эдин Терзич</a> находится на грани <u>увольнения</u> из-за того, что не может контролировать атмосферу в раздевалке.</li>
+            <li>Лучший бомбардир <em>Мадридского Атлетико</em> <a href="https://ru.wikipedia.org/wiki/%D0%90%D0%BB%D1%8C%D0%B2%D0%B0%D1%80%D0%B5%D1%81,_%D0%A5%D1%83%D0%BB%D0%B8%D0%B0%D0%BD">Хулиан Альварез</a> находится в <u>отличной форме</u> и регулярно забивает голы грандам.</li>
+            <li>Вингер <em>«Атлетико Бильбао»</em> <a href="https://ru.wikipedia.org/wiki/%D0%A3%D0%B8%D0%BB%D1%8C%D1%8F%D0%BC%D1%81,_%D0%9D%D0%B8%D0%BA%D0%BE">Нико Уильямс</a> выбыл из строя до мая из-за серьезной <u>травмы левой ноги</u>.</li>
+        </ul>
+        <a href="Sozh4.html">На главную страницу</a>
+        <div class="progress-bar">
+            <div class="progress progress-1">Visca el Barca</div>
+        </div>
+        
+        <footer>
+            © 2024 Барса Веб - Все о ФК Барселона
+        </footer>
+    </body>
+</html>
